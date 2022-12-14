@@ -3,6 +3,12 @@ Exercise.java
 .DS_Store
 lib/
 .vscode/
+mvnw
+mvnw.cmd
+*.cmd
+pom.xml
+**/.mvn/wrapper/
+
 
 .metadata/
 bin/
