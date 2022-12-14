@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-
-  <display-name>nostalJW</display-name>
-
+  <display-name>Nostal</display-name>
   <!-- 1. aliases 설정 -->
   <!-- 서블릿 이름을 실제 서블릿 클래스에 연결 -->
   <!-- <servlet-name>A</servlet-name>와 아래 매핑 설정에서의 servlet-name은 반드시 같아야함 -->
@@ -13,7 +11,6 @@
     <servlet-name>welcome</servlet-name>
     <servlet-class>servlets.WelcomeServlet</servlet-class>
   </servlet>
-
   <!-- 2. 매핑 -->
   <!-- URL을 서블릿 이름에 연결 -->
   <!-- <url-pattern>/A</url-pattern>은 클라이언트(browser)의 요청 URL에서 앱(project) 이름 뒤에 오는 부분으로, 슬래시('/')로 시작해야함 -->
@@ -21,9 +18,21 @@
     <servlet-name>welcome</servlet-name>
     <url-pattern>/welcome</url-pattern>
   </servlet-mapping>
-
   <!-- [참고] 클라이언트(browser)가 요청하는 URL 정보 -->
   <!-- 요청을 보낼 서버의 IP 주소 : Port 번호 / App 이름 / 달라고 요청하는 HTML -->
   <!-- Ex. localhost:8080/FormHandlingServlet/LoginForm.html -->
+
+  <listener>
+    <listener-class>
+      org.springframework.web.context.ContextLoaderListener
+    </listener-class>
+  </listener>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+      /WEB-INF/config/action-mybatis.xml
+      /WEB-INF/config/action-service.xml
+    </param-value>
+  </context-param>
 
 </web-app>
