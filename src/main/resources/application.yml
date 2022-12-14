@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jian?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: nostal
+    password: dbsdud94
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/postgresql/*.xml

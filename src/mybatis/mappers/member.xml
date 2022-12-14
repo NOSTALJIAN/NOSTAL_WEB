@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration 
+PUBLIC "-//mybatis.org//DTD SQL Map Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- member.xml의 네임스페이스 지정 -->
+<mapper namespace="mapper.member">
+
+  <!-- SQL문을 실행한 후 반환되는 레코드들을
+  <typeAlias> 태그에서 지정한 memberVO 빈에 저장 -->
+  <resultMap id="memResult" type="memberVO">
+    <!-- 레코드의 컬럼 이름에 대해 memberVO의 같은 속성에 값을 설정 -->
+    <!-- uid, pwd, 이름, 생년월일, email, 성별, 취미, 가입일 -->
+    <result property="uid" column="uid" />
+    <result property="pwd" column="pwd" />
+    <result property="uname" column="uname" />
+    <result property="birth" column="birth" />
+    <result property="email" column="email" />
+    <result property="gender" column="gender" />
+    <result property="hobby" column="hobby" />
+    <result property="joinDate" column="joinDate" />
+  </resultMap>
+
+  <select id="listMembers" resultMap="membersList">
+    <![CDATA[
+      SELECT * FROM member ORDER BY joinDate DESC
+      ]]>
+  </select>
+
+</mapper>
