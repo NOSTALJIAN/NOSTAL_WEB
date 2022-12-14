@@ -10,9 +10,9 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-@Mapper
 /*	@Mapper
 	Interface를 매퍼로 등록하기 위해 사용 */
+@Mapper
 public interface MemberMapper {
 	
 	//	회원정보 조회

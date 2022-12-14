@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE configuration 
-PUBLIC "-//mybatis.org//DTD SQL Map Config 3.0//EN" 
-"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- member.xml의 네임스페이스 지정 -->
-<mapper namespace="mapper.member">
+<mapper namespace="com.nostal.ch01.MemberMapper">
 
   <!-- SQL문을 실행한 후 반환되는 레코드들을
   <typeAlias> 태그에서 지정한 memberVO 빈에 저장 -->

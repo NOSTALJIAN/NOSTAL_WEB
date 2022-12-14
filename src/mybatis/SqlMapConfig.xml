@@ -19,7 +19,7 @@ PUBLIC "-//mybatis.org//DTD SQL Map Config 3.0//EN"
       <!-- 데이터베이스 연결 설정 -->
       <dataSource type="POOLED">
         <property name="driver" value="com.mysql.cj.jdbc.Driver"  />
-        <property name="url" value="jdbc:mysql://localhost:3306/jian?serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false&characterEncoding=UTF-8"  />
+        <property name="url" value="jdbc:mysql://localhost:3306/jian?serverTimezone=Asia/Seoul&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;characterEncoding=UTF-8"  />
         <property name="username" value="nostal"  />
         <property name="password" value="dbsdud94"  />
       </dataSource>
