@@ -3,7 +3,7 @@ target/
 .mvn/
 **/src/main/**/target/
 **/src/test/**/target/
-.DS_Store
+*.DS_Store
 *.cmd
 mvnw
 pom.xml
