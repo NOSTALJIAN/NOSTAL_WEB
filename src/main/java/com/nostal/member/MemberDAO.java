@@ -1,4 +1,4 @@
-package com.nostal.ch01;
+package com.nostal.member;
 
 import java.sql.*;
 import java.sql.Date;

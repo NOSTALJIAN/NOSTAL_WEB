@@ -10,7 +10,7 @@ PUBLIC "-//mybatis.org//DTD SQL Map Config 3.0//EN"
 	<typeAliases>
     <!--DAO에서 SQL문으로 값을 전달할 떄 또는
         SQL문을 실행한 후 가져온 값을 DAO로 전달할 떄 사용할 빈을 생성 -->
-		<typeAlias type="com.nostal.ch01.MemberVO" alias="MemberVO"/>
+		<typeAlias type="com.nostal.member.MemberVO" alias="MemberVO"/>
 	</typeAliases>
 
   <environments default="development">

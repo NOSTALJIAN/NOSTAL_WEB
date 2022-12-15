@@ -7,6 +7,10 @@ target/
 *.cmd
 mvnw
 pom.xml
+**/src/**/lib/
+**/src/**/resources/
+*.yml
+*.properties
 
 ### STS ###
 .apt_generated

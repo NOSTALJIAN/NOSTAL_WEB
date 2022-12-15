@@ -1,10 +1,63 @@
+# 우선순위: 맨 마지막에 기술한 파일
+mybatis:
+  mapper-locations: classpath:mybatis/mappers/*.xml
+  configuration:
+    # model 프로퍼티 camel case 설정 (abc_def -> abcDef)
+    map-underscore-to-camel-case: true
+    # xml파일 result type에 패키지명을 생략할 수 있도록 alias 설정
+    # type-aliases-package: com.nostal.member
+
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/jian?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc;log4jdbc:mysql://localhost:3306/jian?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
     username: nostal
     password: dbsdud94
 
-mybatis:
-  config-location: classpath:mybatis-config.xml
-  mapper-locations: classpath:mapper/postgresql/*.xml
+logging:
+  level:
+    con:
+      zaxxer:
+        hikari: INFO
+    javax:
+      sql:
+        DataSource: OFF
+    jdbc:
+      # audit:  ResultSet을 제외한 모든 JDBC 호출 정보를 로그로 남김
+      audit:  OFF
+      # resultset:  ResultSet을 포함한 모든 JDBC 호출 정보를 로그로 남김
+      resultset:  OFF
+      # resulttable:  SQL 결과 조회된 데이터의 table을 로그로 남김
+      resultsettable: INFO
+      # sqlonly: SQL문 만을 로그로 남김, PreparedStatement일 경우 관련된 argument 값으로 대체된 SQL문 출력
+      sqlonly:  DEBUG
+      # sqltiming:  SQL문과 해당 SQL을 실행시키는데 수행된 시간 정보(milliseconds) 포함
+      sqltiming:  OFF
+    org:
+      hibernate:
+        SQL:  DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder:  TRACE
+# server
+# server:
+#   port: 80 # http was server port
+#   compression:
+#     enabled: true
+# true : css, html 등 압축해서 전송할 때 이득이 되는 포맷들은 자동적으로 압축해서 보내는 것으로 설정
+#   servlet: # Server Properties
+#     context-path: /
+#   session: # session timeout
+#     timeout: 1800s
+#     encoding: # Encoding UTF-8
+#       charset: UTF-8
+#       enabled: true
+#       force: true
+# tomcat:
+#   threads:
+#     max: 201 # 생성할 수 있는 thread의 총 개수
+#     min-spare: 10 # 항상 활성화 되어있는(idle) thread의 개수
+#   max-connections: 8192 # 수립가능한 connection의 총 개수
+#   accept-count: 50 # 작업큐의 사이즈
+#   connection-timeout: 20000 # timeout 판단 기준 시간, 20초
