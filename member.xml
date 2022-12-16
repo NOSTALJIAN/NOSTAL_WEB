@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- been: 스프링을 실행할 때 사용하는 클래스 객체(인스턴스) -->
+<!DOCTYPE beans PUBLIC "-//SPRING//DTB BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="memberService" class="com.nostal.member.MemberServiceimpl">
+		<property name="member">
+			<value>서지안</value>
+		</property>
+	</bean>
+</beans>
